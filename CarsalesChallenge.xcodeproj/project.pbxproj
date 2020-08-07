@@ -3,17 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E621DAC224DD2343004E32FA /* CarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E621DAC124DD2343004E32FA /* CarListViewModel.swift */; };
+		E621DAC424DD2703004E32FA /* CarListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E621DAC324DD2703004E32FA /* CarListCoordinator.swift */; };
+		E622D7DC24DD0B270021B793 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D7DB24DD0B270021B793 /* AsyncImageView.swift */; };
+		E622D7DE24DD0D6A0021B793 /* CarListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D7DD24DD0D6A0021B793 /* CarListItemCell.swift */; };
+		E622D7E024DD0E520021B793 /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D7DF24DD0E520021B793 /* IconTextView.swift */; };
+		E6850A5024DBBA8D00CAFF91 /* CarsalesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E6850A4F24DBBA8D00CAFF91 /* CarsalesAPI */; };
+		E6B340E924DCDCCC0083EB1C /* CarsListVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B340E824DCDCCC0083EB1C /* CarsListVIewController.swift */; };
+		E6B340EB24DCE2C10083EB1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B340EA24DCE2C10083EB1C /* Extensions.swift */; };
+		E6B340EF24DCED530083EB1C /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B340EE24DCED530083EB1C /* CarDetailsViewController.swift */; };
+		E6B340F824DD02FC0083EB1C /* CarDetailsPhotoCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B340F724DD02FC0083EB1C /* CarDetailsPhotoCarousel.swift */; };
+		E6B340FA24DD03100083EB1C /* CarDetailsPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B340F924DD03100083EB1C /* CarDetailsPhotoCell.swift */; };
 		E6BD32A524DBB73100D7B486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD32A424DBB73100D7B486 /* AppDelegate.swift */; };
 		E6BD32A724DBB73100D7B486 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD32A624DBB73100D7B486 /* SceneDelegate.swift */; };
-		E6BD32A924DBB73100D7B486 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD32A824DBB73100D7B486 /* ViewController.swift */; };
-		E6BD32AC24DBB73100D7B486 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BD32AA24DBB73100D7B486 /* Main.storyboard */; };
 		E6BD32AE24DBB73300D7B486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BD32AD24DBB73300D7B486 /* Assets.xcassets */; };
 		E6BD32B124DBB73300D7B486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BD32AF24DBB73300D7B486 /* LaunchScreen.storyboard */; };
 		E6BD32BC24DBB73300D7B486 /* CarsalesChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD32BB24DBB73300D7B486 /* CarsalesChallengeTests.swift */; };
+		E6C7487F24DD2C7600C6824B /* CarDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7487E24DD2C7600C6824B /* CarDetailsCoordinator.swift */; };
+		E6C7488124DD2CB900C6824B /* CarDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C7488024DD2CB900C6824B /* CarDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +38,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E621DAC124DD2343004E32FA /* CarListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModel.swift; sourceTree = "<group>"; };
+		E621DAC324DD2703004E32FA /* CarListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCoordinator.swift; sourceTree = "<group>"; };
+		E622D7DB24DD0B270021B793 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		E622D7DD24DD0D6A0021B793 /* CarListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListItemCell.swift; sourceTree = "<group>"; };
+		E622D7DF24DD0E520021B793 /* IconTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextView.swift; sourceTree = "<group>"; };
+		E6B340E824DCDCCC0083EB1C /* CarsListVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListVIewController.swift; sourceTree = "<group>"; };
+		E6B340EA24DCE2C10083EB1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E6B340EE24DCED530083EB1C /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
+		E6B340F724DD02FC0083EB1C /* CarDetailsPhotoCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsPhotoCarousel.swift; sourceTree = "<group>"; };
+		E6B340F924DD03100083EB1C /* CarDetailsPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsPhotoCell.swift; sourceTree = "<group>"; };
 		E6BD32A124DBB73100D7B486 /* CarsalesChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsalesChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BD32A424DBB73100D7B486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6BD32A624DBB73100D7B486 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E6BD32A824DBB73100D7B486 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E6BD32AB24DBB73100D7B486 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6BD32AD24DBB73300D7B486 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6BD32B024DBB73300D7B486 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6BD32B224DBB73300D7B486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6BD32B724DBB73300D7B486 /* CarsalesChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarsalesChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BD32BB24DBB73300D7B486 /* CarsalesChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsalesChallengeTests.swift; sourceTree = "<group>"; };
 		E6BD32BD24DBB73300D7B486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6C7487E24DD2C7600C6824B /* CarDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsCoordinator.swift; sourceTree = "<group>"; };
+		E6C7488024DD2CB900C6824B /* CarDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6850A5024DBBA8D00CAFF91 /* CarsalesAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +80,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E621DAC524DD2B70004E32FA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E621DAC624DD2B75004E32FA /* Coordinator */,
+				E621DAC724DD2B7D004E32FA /* Controller */,
+				E621DAC824DD2B84004E32FA /* ViewModel */,
+				E621DAC924DD2B8B004E32FA /* Views */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		E621DAC624DD2B75004E32FA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E621DAC324DD2703004E32FA /* CarListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E621DAC724DD2B7D004E32FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E6B340E824DCDCCC0083EB1C /* CarsListVIewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E621DAC824DD2B84004E32FA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E621DAC124DD2343004E32FA /* CarListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E621DAC924DD2B8B004E32FA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E622D7DD24DD0D6A0021B793 /* CarListItemCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E622D7DA24DD0B1E0021B793 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E622D7DB24DD0B270021B793 /* AsyncImageView.swift */,
+				E6B340EA24DCE2C10083EB1C /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E63AA54624DBB95E00A34ED3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6B340F624DD02E60083EB1C /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				E6C7488824DD3CA900C6824B /* Coordinator */,
+				E6C7488924DD3CB100C6824B /* Controllers */,
+				E6C7488A24DD3CB900C6824B /* ViewModel */,
+				E6C7488B24DD3CC100C6824B /* Views */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		E6BD329824DBB73100D7B486 = {
 			isa = PBXGroup;
 			children = (
 				E6BD32A324DBB73100D7B486 /* CarsalesChallenge */,
 				E6BD32BA24DBB73300D7B486 /* CarsalesChallengeTests */,
 				E6BD32A224DBB73100D7B486 /* Products */,
+				E63AA54624DBB95E00A34ED3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,10 +172,11 @@
 		E6BD32A324DBB73100D7B486 /* CarsalesChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				E621DAC524DD2B70004E32FA /* List */,
+				E6B340F624DD02E60083EB1C /* Details */,
+				E622D7DA24DD0B1E0021B793 /* Helpers */,
 				E6BD32A424DBB73100D7B486 /* AppDelegate.swift */,
 				E6BD32A624DBB73100D7B486 /* SceneDelegate.swift */,
-				E6BD32A824DBB73100D7B486 /* ViewController.swift */,
-				E6BD32AA24DBB73100D7B486 /* Main.storyboard */,
 				E6BD32AD24DBB73300D7B486 /* Assets.xcassets */,
 				E6BD32AF24DBB73300D7B486 /* LaunchScreen.storyboard */,
 				E6BD32B224DBB73300D7B486 /* Info.plist */,
@@ -97,6 +191,40 @@
 				E6BD32BD24DBB73300D7B486 /* Info.plist */,
 			);
 			path = CarsalesChallengeTests;
+			sourceTree = "<group>";
+		};
+		E6C7488824DD3CA900C6824B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E6C7487E24DD2C7600C6824B /* CarDetailsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E6C7488924DD3CB100C6824B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6B340EE24DCED530083EB1C /* CarDetailsViewController.swift */,
+				E6B340F724DD02FC0083EB1C /* CarDetailsPhotoCarousel.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E6C7488A24DD3CB900C6824B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6C7488024DD2CB900C6824B /* CarDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E6C7488B24DD3CC100C6824B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6B340F924DD03100083EB1C /* CarDetailsPhotoCell.swift */,
+				E622D7DF24DD0E520021B793 /* IconTextView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +243,9 @@
 			dependencies = (
 			);
 			name = CarsalesChallenge;
+			packageProductDependencies = (
+				E6850A4F24DBBA8D00CAFF91 /* CarsalesAPI */,
+			);
 			productName = CarsalesChallenge;
 			productReference = E6BD32A124DBB73100D7B486 /* CarsalesChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -182,7 +313,6 @@
 			files = (
 				E6BD32B124DBB73300D7B486 /* LaunchScreen.storyboard in Resources */,
 				E6BD32AE24DBB73300D7B486 /* Assets.xcassets in Resources */,
-				E6BD32AC24DBB73100D7B486 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +330,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6BD32A924DBB73100D7B486 /* ViewController.swift in Sources */,
+				E622D7DE24DD0D6A0021B793 /* CarListItemCell.swift in Sources */,
+				E6B340FA24DD03100083EB1C /* CarDetailsPhotoCell.swift in Sources */,
+				E621DAC224DD2343004E32FA /* CarListViewModel.swift in Sources */,
+				E6B340EB24DCE2C10083EB1C /* Extensions.swift in Sources */,
+				E6B340EF24DCED530083EB1C /* CarDetailsViewController.swift in Sources */,
+				E622D7DC24DD0B270021B793 /* AsyncImageView.swift in Sources */,
+				E6C7487F24DD2C7600C6824B /* CarDetailsCoordinator.swift in Sources */,
+				E622D7E024DD0E520021B793 /* IconTextView.swift in Sources */,
+				E6C7488124DD2CB900C6824B /* CarDetailsViewModel.swift in Sources */,
 				E6BD32A524DBB73100D7B486 /* AppDelegate.swift in Sources */,
+				E621DAC424DD2703004E32FA /* CarListCoordinator.swift in Sources */,
+				E6B340F824DD02FC0083EB1C /* CarDetailsPhotoCarousel.swift in Sources */,
 				E6BD32A724DBB73100D7B486 /* SceneDelegate.swift in Sources */,
+				E6B340E924DCDCCC0083EB1C /* CarsListVIewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +366,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E6BD32AA24DBB73100D7B486 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6BD32AB24DBB73100D7B486 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E6BD32AF24DBB73300D7B486 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -365,6 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAN9592EK4;
 				INFOPLIST_FILE = CarsalesChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAN9592EK4;
 				INFOPLIST_FILE = CarsalesChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +604,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E6850A4F24DBBA8D00CAFF91 /* CarsalesAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CarsalesAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6BD329924DBB73100D7B486 /* Project object */;
 }
