@@ -36,20 +36,15 @@ class AsyncImageView: UIImageView {
         guard let path = self.path, let url = URL(string: path)  else { return }
         spinner.startAnimating()
         
-        let request = URLRequest(url: url)
-        let publishder = URLSession.shared.dataTaskPublisher(for: request)
-            .tryMap { result -> (UIImage?, URL?) in
-                return (UIImage(data: result.data), result.response.url)
-        }
-        .receive(on: DispatchQueue.main)
-        .eraseToAnyPublisher()
-        
-        cancellable = publishder.sink(receiveCompletion: { _ in }) { [weak self] (img, url) in
-            self?.spinner.stopAnimating()
-            guard url?.absoluteString == path else { return }
-            self?.image = img
-            self?.cancelLoad()
-        }
+        cancellable = URLSession.shared.dataTaskPublisher(for: url)
+            .map { UIImage(data: $0.data) }
+            .replaceError(with: nil)
+            .receive(on: DispatchQueue.main)
+            .handleEvents(receiveCompletion: { _ in
+                self.spinner.stopAnimating()
+            })
+            .assign(to: \.image, on: self)
+
     }
     
     func cancelLoad() {

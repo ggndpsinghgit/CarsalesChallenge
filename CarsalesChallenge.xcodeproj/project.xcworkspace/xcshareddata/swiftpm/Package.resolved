@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CarsalesAPI",
+        "repositoryURL": "https://github.com/ggndpsingh/CarsalesAPI",
+        "state": {
+          "branch": "main",
+          "revision": "1eddcd7eeda934401a8a9d16dfa9bd20b4f2db15",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

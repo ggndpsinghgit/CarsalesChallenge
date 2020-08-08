@@ -13,6 +13,7 @@
 		E622D7DE24DD0D6A0021B793 /* CarListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D7DD24DD0D6A0021B793 /* CarListItemCell.swift */; };
 		E622D7E024DD0E520021B793 /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D7DF24DD0E520021B793 /* IconTextView.swift */; };
 		E6850A5024DBBA8D00CAFF91 /* CarsalesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E6850A4F24DBBA8D00CAFF91 /* CarsalesAPI */; };
+		E6A4914A24DD3F95000BD0BE /* CarsalesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E6A4914924DD3F95000BD0BE /* CarsalesAPI */; };
 		E6B340E924DCDCCC0083EB1C /* CarsListVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B340E824DCDCCC0083EB1C /* CarsListVIewController.swift */; };
 		E6B340EB24DCE2C10083EB1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B340EA24DCE2C10083EB1C /* Extensions.swift */; };
 		E6B340EF24DCED530083EB1C /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B340EE24DCED530083EB1C /* CarDetailsViewController.swift */; };
@@ -67,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6850A5024DBBA8D00CAFF91 /* CarsalesAPI in Frameworks */,
+				E6A4914A24DD3F95000BD0BE /* CarsalesAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +247,7 @@
 			name = CarsalesChallenge;
 			packageProductDependencies = (
 				E6850A4F24DBBA8D00CAFF91 /* CarsalesAPI */,
+				E6A4914924DD3F95000BD0BE /* CarsalesAPI */,
 			);
 			productName = CarsalesChallenge;
 			productReference = E6BD32A124DBB73100D7B486 /* CarsalesChallenge.app */;
@@ -296,6 +299,9 @@
 				Base,
 			);
 			mainGroup = E6BD329824DBB73100D7B486;
+			packageReferences = (
+				E6A4914824DD3F95000BD0BE /* XCRemoteSwiftPackageReference "CarsalesAPI" */,
+			);
 			productRefGroup = E6BD32A224DBB73100D7B486 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -605,9 +611,25 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		E6A4914824DD3F95000BD0BE /* XCRemoteSwiftPackageReference "CarsalesAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ggndpsingh/CarsalesAPI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		E6850A4F24DBBA8D00CAFF91 /* CarsalesAPI */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = CarsalesAPI;
+		};
+		E6A4914924DD3F95000BD0BE /* CarsalesAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6A4914824DD3F95000BD0BE /* XCRemoteSwiftPackageReference "CarsalesAPI" */;
 			productName = CarsalesAPI;
 		};
 /* End XCSwiftPackageProductDependency section */
