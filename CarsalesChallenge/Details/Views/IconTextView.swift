@@ -3,7 +3,12 @@
 
 import UIKit
 
+/// A simple view to show an icon and text,
+/// aligned horizontally
 class IconTextView: UIView {
+    
+    // MARK: UI Elements
+    
     private let iconView: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -29,6 +34,8 @@ class IconTextView: UIView {
         return view
     }()
     
+    // MARK: Stored Properties
+    
     var foregroundColor: UIColor? {
         get { textLabel.textColor }
         set {
@@ -42,12 +49,7 @@ class IconTextView: UIView {
         set { textLabel.text = newValue }
     }
     
-    func set(icon: String, text: String) {
-        textLabel.text = text
-        let configuration = UIImage.SymbolConfiguration(font: .preferredFont(forTextStyle: .callout))
-        let image = UIImage(systemName: icon, withConfiguration: configuration)
-        iconView.image = image
-    }
+    // MARK: Initializer
     
     init() {
         super.init(frame: .zero)
@@ -57,6 +59,8 @@ class IconTextView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: View Layout
     
     private func layout() {
         [iconView, textLabel, separator].forEach(addSubview)
@@ -76,5 +80,14 @@ class IconTextView: UIView {
             separator.heightAnchor.constraint(equalToConstant: 1 / UIScreen.main.scale),
             separator.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
+    }
+    
+    // MARK: Setters
+    
+    func set(icon: String, text: String) {
+        textLabel.text = text
+        let configuration = UIImage.SymbolConfiguration(font: .preferredFont(forTextStyle: .callout))
+        let image = UIImage(systemName: icon, withConfiguration: configuration)
+        iconView.image = image
     }
 }

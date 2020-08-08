@@ -9,6 +9,9 @@ protocol CarDetailsViewControllerDelegate: AnyObject {
 }
 
 final class CarDetailsViewController: UIViewController {
+    
+    // MARK: UI Elemets
+    
     private let locationLabel = makeIconLabel()
     private let priceLabel = makeIconLabel()
     private let statusLabel = makeIconLabel()
@@ -38,6 +41,8 @@ final class CarDetailsViewController: UIViewController {
         return spinner
     }()
     
+    // MARK: Stored Properties
+    
     private let viewModel: CarDetailsViewModel
     weak var delegate: CarDetailsViewControllerDelegate?
     var viewState: ViewState = .init() {
@@ -52,6 +57,8 @@ final class CarDetailsViewController: UIViewController {
         }
     }
     
+    // MARK: Initializer
+    
     init(viewModel: CarDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -60,6 +67,8 @@ final class CarDetailsViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,21 +84,7 @@ final class CarDetailsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func setupPhotosCarousel() {
-        let carousel = CarDetailsPhotoCarousel()
-        addChild(carousel)
-        carousel.willMove(toParent: self)
-        if let childView = carousel.view {
-            stackView.insertArrangedSubview(childView, at: 0)
-            childView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                childView.widthAnchor.constraint(equalTo: view.widthAnchor),
-                childView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2/3)
-            ])
-        }
-        carousel.didMove(toParent: self)
-        self.carousel = carousel
-    }
+    // MARK: View Layout
     
     private func layout() {
         let container = UIView(frame: .zero)
@@ -120,11 +115,31 @@ final class CarDetailsViewController: UIViewController {
         ])
     }
     
+    func setupPhotosCarousel() {
+        let carousel = CarDetailsPhotoCarousel()
+        addChild(carousel)
+        carousel.willMove(toParent: self)
+        if let childView = carousel.view {
+            stackView.insertArrangedSubview(childView, at: 0)
+            childView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                childView.widthAnchor.constraint(equalTo: view.widthAnchor),
+                childView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2/3)
+            ])
+        }
+        carousel.didMove(toParent: self)
+        self.carousel = carousel
+    }
+    
+    // MARK: Action Handlers
+    
     @objc
     private func doneTapped() {
         delegate?.carDetailsViewControllerShouldDismiss(self)
     }
 }
+
+// MARK: - Factories
 
 extension CarDetailsViewController {
     private static func makeTextView() -> UITextView {
@@ -145,6 +160,8 @@ extension CarDetailsViewController {
         return view
     }
 }
+
+// MARK: - View State
 
 extension CarDetailsViewController {
     struct ViewState {

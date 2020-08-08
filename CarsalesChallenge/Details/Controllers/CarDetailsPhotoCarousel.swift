@@ -4,6 +4,9 @@
 import UIKit
 
 final class CarDetailsPhotoCarousel: UIViewController {
+    
+    // MARK: UI Elements
+    
     private(set) lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -22,12 +25,16 @@ final class CarDetailsPhotoCarousel: UIViewController {
         return collectionView
     }()
     
+    // MARK: Stored Properties
+    
     private var currentIndex: Int = 0
     var photos: [String] = [] {
        didSet {
             collectionView.reloadData()
        }
-   }
+    }
+    
+    // MARK: Initializer
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -37,10 +44,21 @@ final class CarDetailsPhotoCarousel: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            self.collectionView.collectionViewLayout.invalidateLayout()
+        }, completion: nil)
+    }
+    
+    // MARK: View Layout
     
     private func layout() {
         view.addSubview(collectionView)
@@ -51,14 +69,9 @@ final class CarDetailsPhotoCarousel: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        coordinator.animate(alongsideTransition: { _ in
-            self.collectionView.collectionViewLayout.invalidateLayout()
-        }, completion: nil)
-    }
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension CarDetailsPhotoCarousel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,6 +85,8 @@ extension CarDetailsPhotoCarousel: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension CarDetailsPhotoCarousel: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
@@ -84,6 +99,8 @@ extension CarDetailsPhotoCarousel: UICollectionViewDelegateFlowLayout {
         return CGPoint(x: x, y: 0)
     }
 }
+
+// MARK: - UIScrollViewDelegate
 
 extension CarDetailsPhotoCarousel {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

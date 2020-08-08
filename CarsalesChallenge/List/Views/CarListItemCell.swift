@@ -4,6 +4,9 @@
 import UIKit
 
 class CarListItemCell: UICollectionViewCell {
+    
+    // MARK: UI Elements
+    
     let imageView: AsyncImageView = {
         let view = AsyncImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +41,8 @@ class CarListItemCell: UICollectionViewCell {
         return label
     }()
     
+    // MARK: Stored Properties
+    
     var viewState: ViewState = .init() {
         didSet {
             titleLabel.text = viewState.title
@@ -46,6 +51,8 @@ class CarListItemCell: UICollectionViewCell {
             imageView.path = viewState.photoPath
         }
     }
+    
+    // MARK: Initializer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,15 +85,19 @@ class CarListItemCell: UICollectionViewCell {
         ])
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Cell Lifecycle
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.cancelLoad()
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
+
+// MARK: - ViewState
 
 extension CarListItemCell {
     struct ViewState {

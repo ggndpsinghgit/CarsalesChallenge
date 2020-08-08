@@ -5,11 +5,16 @@ import UIKit
 import Combine
 
 class AsyncImageView: UIImageView {
+    
+    // MARK: UI Elements
+    
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .medium)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         return spinner
     }()
+    
+    // MARK: Stored Properties
     
     private var cancellable: AnyCancellable?
     var path: String? {
@@ -17,6 +22,8 @@ class AsyncImageView: UIImageView {
             loadImage()
         }
     }
+    
+    // MARK: Initializer
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -31,6 +38,8 @@ class AsyncImageView: UIImageView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: Image Loading
     
     private func loadImage() {
         guard let path = self.path, let url = URL(string: path)  else { return }

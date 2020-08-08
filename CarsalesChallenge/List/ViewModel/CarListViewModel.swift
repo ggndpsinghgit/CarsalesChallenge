@@ -5,14 +5,23 @@ import UIKit
 import CarsalesAPI
 
 final class CarListViewModel {
+    
+    // MARK: API
+    
     private let api = CarsalesAPI()
+    
+    // MARK: Stored Properties
     
     var actionHandler: ((Action) -> Void)?
     private var cars: [CarsalesAPI.ListItem] = []
     
+    // MARK: Initializer
+    
     init() {
         loadCars()
     }
+    
+    // MARK: List Loading
     
     private func loadCars() {
         api.getList { [weak self] result in
@@ -25,6 +34,8 @@ final class CarListViewModel {
             }
         }
     }
+    
+    // MARK: Collection View Data Source
     
     func numberOfItems() -> Int {
         cars.count
@@ -39,6 +50,8 @@ final class CarListViewModel {
             photoPath: car.photoPath)
     }
     
+    // MARK: Getters
+    
     func showDetails(forItemAt indexPath: IndexPath) {
         let car = cars[indexPath.row]
         actionHandler?(.showDetails(car.detailsURL))
@@ -47,7 +60,11 @@ final class CarListViewModel {
     func detailsURL(forItemAt indexPath: IndexPath) -> String {
         cars[indexPath.row].detailsURL
     }
-    
+}
+
+// MARK: - Actions
+
+extension CarListViewModel {
     enum Action {
         case reload
         case failedToLoad

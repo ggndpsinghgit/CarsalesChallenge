@@ -4,13 +4,22 @@ import UIKit
 import CarsalesAPI
 
 final class CarDetailsViewModel {
+    
+    // MARK: API
+    
     private let api = CarsalesAPI()
     
+    // MARK: Stored Properties
+    
     var actionHandler: ((Action) -> Void)?
+    
+    // MARK: Initializer
     
     init(path: String) {
         loadCarDetails(at: path)
     }
+    
+    // MARK: Details Loading
     
     private func loadCarDetails(at path: String) {
         api.getDetails(path: path) { [weak self] result in
@@ -24,6 +33,8 @@ final class CarDetailsViewModel {
         }
     }
     
+    // MARK: View State Generation
+    
     private func makeViewState(for car: CarsalesAPI.CarDetails) -> CarDetailsViewController.ViewState {
         return .init(
             title: car.title,
@@ -33,7 +44,11 @@ final class CarDetailsViewModel {
             comments: car.comments,
             photos: car.photos)
     }
-    
+}
+
+// MARK: - Actions
+
+extension CarDetailsViewModel {
     enum Action {
         case finishedLoding(CarDetailsViewController.ViewState)
         case failedToLoad

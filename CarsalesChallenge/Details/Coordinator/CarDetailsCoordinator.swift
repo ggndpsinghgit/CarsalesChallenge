@@ -8,17 +8,26 @@ protocol CarDetailsCoordinatorDelegate: AnyObject {
 }
 
 final class CarDetailsCoordinator: NSObject, Coordinator {
-    private let viewController: CarDetailsViewController
-    private let navigationController = UINavigationController()
+    
+    // MARK: Coordinator
+    
     var rootViewController: UIViewController { navigationController }
     var childCoordinators: [Coordinator] = []
+    
+    // MARK: Stored Properties
+    
+    private let viewController: CarDetailsViewController
+    private let navigationController = UINavigationController()
     weak var delegate: CarDetailsCoordinatorDelegate?
+    
+    // MARK: Initializer
     
     init(path: String) {
         let viewModel = CarDetailsViewModel(path: path)
         viewController = CarDetailsViewController(viewModel: viewModel)
         navigationController.viewControllers = [viewController]
         super.init()
+
         navigationController.presentationController?.delegate = self
         viewController.delegate = self
 
@@ -32,8 +41,13 @@ final class CarDetailsCoordinator: NSObject, Coordinator {
         }
     }
     
+    // MARK: Action Handlers
+    
     private func presentAlert() {
-        let alertController = UIAlertController(title: "Error!", message: "Failed to load cars details. Try again later.", preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: "Error!",
+            message: "Failed to load car details.",
+            preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .cancel, handler: { [weak self] _ in
             guard let self = self else { return }
             self.viewController.dismiss(animated: true) {
@@ -46,6 +60,8 @@ final class CarDetailsCoordinator: NSObject, Coordinator {
     }
 }
 
+// MARK: - CarDetailsViewControllerDelegate
+
 extension CarDetailsCoordinator: CarDetailsViewControllerDelegate {
     func carDetailsViewControllerShouldDismiss(_ viewController: CarDetailsViewController) {
         viewController.dismiss(animated: true) {
@@ -54,7 +70,11 @@ extension CarDetailsCoordinator: CarDetailsViewControllerDelegate {
     }
 }
 
+// MARK: - UIAdaptivePresentationControllerDelegate
+
 extension CarDetailsCoordinator: UIAdaptivePresentationControllerDelegate {
+    
+    // Handle swipe to dimiss on iOS 13.0+
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         delegate?.carDetailsCoordinatorDidFinish(self)
     }
