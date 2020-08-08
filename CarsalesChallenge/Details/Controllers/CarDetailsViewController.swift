@@ -31,10 +31,18 @@ final class CarDetailsViewController: UIViewController {
         return view
     }()
     
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        return spinner
+    }()
+    
     private let viewModel: CarDetailsViewModel
     weak var delegate: CarDetailsViewControllerDelegate?
     var viewState: ViewState = .init() {
         didSet {
+            spinner.stopAnimating()
             title = viewState.title
             priceLabel.set(icon: viewState.price.icon, text: viewState.price.text)
             locationLabel.set(icon: viewState.location.icon, text: viewState.location.text)
@@ -58,6 +66,7 @@ final class CarDetailsViewController: UIViewController {
         view.backgroundColor = .systemBackground
         layout()
         setupPhotosCarousel()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: spinner)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
     }
     
