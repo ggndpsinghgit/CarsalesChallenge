@@ -123,8 +123,8 @@ final class CarDetailsViewController: UIViewController {
             stackView.insertArrangedSubview(childView, at: 0)
             childView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                childView.widthAnchor.constraint(equalTo: view.widthAnchor),
-                childView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2/3)
+                childView.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+                childView.heightAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 2/3)
             ])
         }
         carousel.didMove(toParent: self)
