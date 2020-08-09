@@ -7,21 +7,23 @@ final class CarDetailsViewModel {
     
     // MARK: API
     
-    private let api = CarsalesAPI()
+    private let api: CarsalesAPI
     
     // MARK: Stored Properties
     
+    private let path: String
     var actionHandler: ((Action) -> Void)?
     
     // MARK: Initializer
     
-    init(path: String) {
-        loadCarDetails(at: path)
+    init(api: CarsalesAPI = .init(), path: String) {
+        self.api = api
+        self.path = path
     }
     
     // MARK: Details Loading
     
-    private func loadCarDetails(at path: String) {
+    func loadCarDetails() {
         api.getDetails(path: path) { [weak self] result in
             switch result {
             case .success(let value):

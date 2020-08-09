@@ -72,6 +72,7 @@ final class CarDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.loadCarDetails()
         view.backgroundColor = .systemBackground
         layout()
         setupPhotosCarousel()

@@ -2,6 +2,7 @@
 //  Copyright © 2020 Gagandeep Singh. All rights reserved.
 
 import UIKit
+import CarsalesAPI
 
 class CarListItemCell: UICollectionViewCell {
     
@@ -100,11 +101,18 @@ class CarListItemCell: UICollectionViewCell {
 // MARK: - ViewState
 
 extension CarListItemCell {
-    struct ViewState {
+    struct ViewState: Equatable {
         let title: String
         let price: String
         let location: String
         let photoPath: String
+        
+        init(item: CarsalesAPI.ListItem) {
+            self.title = item.title
+            self.price = item.priceString
+            self.location = item.locationString
+            self.photoPath = item.photoPath
+        }
         
         init(
             title: String = "",

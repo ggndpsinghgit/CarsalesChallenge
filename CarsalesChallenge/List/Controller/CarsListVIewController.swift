@@ -26,6 +26,7 @@ class CarsListViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Carsales.com.au"
+        viewModel.loadCars()
         collectionView.backgroundColor = .systemBackground
         collectionView.register(CarListItemCell.self)
     }

@@ -8,7 +8,7 @@ final class CarListViewModel {
     
     // MARK: API
     
-    private let api = CarsalesAPI()
+    private let api: CarsalesAPI
     
     // MARK: Stored Properties
     
@@ -17,13 +17,13 @@ final class CarListViewModel {
     
     // MARK: Initializer
     
-    init() {
-        loadCars()
+    init(api: CarsalesAPI = .init()) {
+        self.api = api
     }
     
     // MARK: List Loading
     
-    private func loadCars() {
+    func loadCars() {
         api.getList { [weak self] result in
             switch result {
             case .success(let value):
@@ -42,12 +42,8 @@ final class CarListViewModel {
     }
     
     func viewState(forItemAt indexPath: IndexPath) -> CarListItemCell.ViewState {
-        let car = cars[indexPath.row]
-        return .init(
-            title: car.title,
-            price: car.priceString,
-            location: car.locationString,
-            photoPath: car.photoPath)
+        let item = cars[indexPath.row]
+        return .init(item: item)
     }
     
     // MARK: Getters
@@ -55,10 +51,6 @@ final class CarListViewModel {
     func showDetails(forItemAt indexPath: IndexPath) {
         let car = cars[indexPath.row]
         actionHandler?(.showDetails(car.detailsURL))
-    }
-    
-    func detailsURL(forItemAt indexPath: IndexPath) -> String {
-        cars[indexPath.row].detailsURL
     }
 }
 
