@@ -15,14 +15,14 @@ MVVM-C (Coordinator)
 ### Development plan  
 
 #### Requirement 1
-- An API to pull/decode date from the REST endpoint  
+- An API to pull/decode data from the REST endpoint.
 
 ##### Fulfilment
 - Created the CarsalesAPI Swift Package that handles the above.  
 - Why a package?  
-- Because the plan was the create two apps, one with auto-layout and another in SwiftUI. Hence, a shared library was the best approach.  
+- Because the plan was to create two apps, one with auto-layout and another in SwiftUI. Hence, a shared library was the best approach.  
 - Why two apps and not just add a SwiftUI version of the UI in the same app?  
-- For SwiftUI 2.0. It has a few extra APIs that helped in developing the required app. e.g. `LazyVStack` to display a grid of items.  
+- For SwiftUI 2.0. It has a few extra APIs that helped in developing the required app.
 
 
 #### Requirement 2
@@ -30,7 +30,8 @@ MVVM-C (Coordinator)
 - Display a single row on an iPhone. 2 or 3 rows on an iPad depending upon the orientation.  
 
 ##### Fulfilment
-- A `UICollectionView` is the obvious choice to display a grid of items.  
+- A `UICollectionView` is the obvious choice to display a grid of items.
+- All image views have an embedded `AsyncImageView` that loads the image asynchronously using Combine.
 - UI for the collection view and the cells is created using auto-layout with programmatic constraints.  
 
 ##### Issues
