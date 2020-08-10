@@ -46,13 +46,14 @@ The main reason is that the item size in `UICollectionViewCompositionalLayout` i
 - I decided to use a `UIStackView` embedded in a `UIScrollView` as the complexity of creating cells for each view type in a `UITableView` would've been overkill for this task.  
 - For the image carousel, it was again a job for `UICollectionView` as it supports horizontal scrolling. And, it also supports `paging` which was absolutely required to make the carousel work as it should.  
 
+### Installation
 #### Requirements  
 - Xcode 11.6  
 - A device running iOS 13 or above (Optional)  
-##### Dependencies  
+##### Dependencies
 [CarsalesAPI](https://github.com/ggndpsinghgit/CarsalesAPI)
 
-#### Installation  
+#### Testing
 - Clone the repo  
 - Open the .xcproject file in Xcode  
 - The CarsalesAPI Swift Package should automatically update when the project loads. If it does not, you can manually do it by going to File -> Swift Packages -> Update to Latest Package Versions.
